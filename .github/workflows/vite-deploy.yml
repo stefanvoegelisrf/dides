@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy Landing Page
 
 on:
   # Runs on pushes targeting the default branch
@@ -37,6 +37,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          cache-dependency-path: './black-mirror-landing-page/package-lock.json'
       - name: Install dependencies
         run: npm ci
       - name: Build
