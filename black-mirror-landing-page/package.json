@@ -1,18 +1,22 @@
 {
-  "name": "black-mirror-landing-page",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "black-mirror-landing-page-2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "Stefan Vögeli",
-  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.2"
+  },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
-    "vite": "^5.2.10"
+    "vite": "^5.2.0"
   }
 }
