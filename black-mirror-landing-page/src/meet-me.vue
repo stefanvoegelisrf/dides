@@ -1,20 +1,22 @@
 <template>
     <main class="h-screen max-h-screen bg-dark-gunmetal overflow-hidden">
-        <div class="absolute xl:h-screen w-full xl:w-1/2 bottom-0 xl:top-0 left-0 xl:left-1/2 flex xl:flex-col flex-col-reverse items-center justify-center gap-16">
+        <div
+            class="absolute xl:h-screen w-full xl:w-1/2 bottom-0 xl:top-0 left-0 xl:left-1/2 flex xl:flex-col flex-col-reverse items-center justify-center gap-16">
             <h1 class="m-plus-1p-medium color-tuscany text-5xl xl:text-8xl">SAN JUNIPERO</h1>
             <div class="flex flex-row xl:flex-col items-center gap-8 text-center">
                 <h2 class="m-plus-1p-regular color-tuscany">Black Mirror Series 3, Episode 4</h2>
                 <h2 class="m-plus-1p-regular color-tuscany">Directed by Owen Harris</h2>
             </div>
         </div>
-        <div id="beach-scene" class="rounded-full absolute top-1/3 xl:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:-left-56 overflow-hidden">
+        <div id="beach-scene"
+            class="rounded-full absolute top-1/3 xl:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:-left-56 overflow-hidden">
             <p class="nanum-myeongjo text-white absolute top-1/2 left-1/2 z-10 text-xl xl:text-4xl w-1/3 text-center">
                 “If we really met, you wouldn't like me.”</p>
             <div class="relative w-full h-full">
                 <div class="circle absolute top-0 left-0 h-full w-full" v-for="n in 18">
                     <div class="relative h-full w-full">
                         <span
-                            class="absolute left-1/2 -translate-x-1/2 top-0 translate-y-1/2 w-12 h-12 xl:w-24 xl:h-24 bg-dark-gunmetal rounded-full"></span>
+                            class="inner-circle absolute left-1/2 -translate-x-1/2 top-0 translate-y-1/2 w-12 h-12 xl:w-24 xl:h-24 bg-dark-gunmetal rounded-full"></span>
                     </div>
                 </div>
             </div>
@@ -25,8 +27,8 @@
 main {
     --color-dark-gunmetal: #1D2734;
     --color-tuscany: #BD98A0;
-    --circle-amount:18;
-    --animation-duration:1.5s;
+    --circle-amount: 18;
+    --animation-duration: 1.25s;
 }
 
 #beach-scene {
@@ -35,103 +37,139 @@ main {
     background-position: 35%;
     height: 120vmin;
     width: 120vmin;
+    box-shadow: 0 0 1rem 1rem rgba(255, 255, 255, .1);
 }
 
-.circle{
-    animation-name: pulse;
+.circle {
     animation-duration: var(--animation-duration);
+    animation-name: pulse;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    opacity: 0;
+}
+
+.inner-circle {
+    box-shadow: 0 0 .25rem .25rem rgba(255, 255, 255, .1);
+}
+
+.circle:nth-child(10) {
+    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 1);
+}
+
+.circle:nth-child(11),
+.circle:nth-child(9) {
+    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 3);
+}
+
+.circle:nth-child(12),
+.circle:nth-child(8) {
+    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 5);
+}
+
+.circle:nth-child(13),
+.circle:nth-child(7) {
+    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 7);
+}
+
+.circle:nth-child(14),
+.circle:nth-child(6) {
+    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 9);
+}
+
+.circle:nth-child(15),
+.circle:nth-child(5) {
+    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 11);
+}
+
+.circle:nth-child(16),
+.circle:nth-child(4) {
+    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 13);
+}
+
+.circle:nth-child(17),
+.circle:nth-child(3) {
+    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 15);
+}
+
+.circle:nth-child(18),
+.circle:nth-child(2) {
+    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 17);
+}
+
+.circle:nth-child(1) {
+    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 18);
 }
 
 .circle:nth-child(1) {
     transform: rotate(0deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 1);
 }
 
 .circle:nth-child(2) {
     transform: rotate(20deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 2);
 }
 
 .circle:nth-child(3) {
     transform: rotate(40deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 3);
 }
 
 .circle:nth-child(4) {
     transform: rotate(60deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 4);
 }
 
 .circle:nth-child(5) {
     transform: rotate(80deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 5);
 }
 
 .circle:nth-child(6) {
     transform: rotate(100deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 6);
 }
 
 .circle:nth-child(7) {
     transform: rotate(120deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 7);
 }
 
 .circle:nth-child(8) {
     transform: rotate(140deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 8);
 }
 
 .circle:nth-child(9) {
     transform: rotate(160deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 9);
 }
 
 .circle:nth-child(10) {
     transform: rotate(180deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 10);
 }
 
 .circle:nth-child(11) {
     transform: rotate(200deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 11);
 }
 
 .circle:nth-child(12) {
     transform: rotate(220deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 12);
 }
 
 .circle:nth-child(13) {
     transform: rotate(240deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 13);
 }
 
 .circle:nth-child(14) {
     transform: rotate(260deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 14);
 }
 
 .circle:nth-child(15) {
     transform: rotate(280deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 15);
 }
 
 .circle:nth-child(16) {
     transform: rotate(300deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 16);
 }
 
 .circle:nth-child(17) {
     transform: rotate(320deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 17);
 }
 
 .circle:nth-child(18) {
     transform: rotate(340deg);
-    animation-delay: calc(var(--animation-duration) / var(--circle-amount) * 18);
 }
 
 .color-dark-gunmetal {
@@ -151,7 +189,10 @@ main {
 }
 
 @keyframes pulse {
+
     0%,
+    25%,
+    75%,
     100% {
         opacity: 0;
     }
