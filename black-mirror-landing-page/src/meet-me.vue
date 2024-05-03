@@ -1,6 +1,15 @@
 <template>
-    <main class="h-screen bg-dark-gunmetal">
+    <main class="h-screen bg-dark-gunmetal overflow-hidden">
+        <div class=" absolute h-screen w-1/2 left-1/2 flex flex-col items-center justify-center gap-16">
+            <h1 class="m-plus-1p-medium color-tuscany text-8xl">SAN JUNIPERO</h1>
+            <div class="flex flex-col items-center gap-8">
+                <h2 class="m-plus-1p-regular color-tuscany">Black Mirror Series 3, Episode 4</h2>
+                <h2 class="m-plus-1p-regular color-tuscany">Directed by Owen Harris</h2>
+            </div>
+        </div>
         <div id="beach-scene" class="rounded-full absolute top-1/2 -translate-y-1/2 -left-40">
+            <p class="nanum-myeongjo text-white absolute top-1/2 left-1/2 z-10 text-4xl w-64 text-center">
+                “If we really met, you wouldn't like me.”</p>
             <div class="relative w-full h-full">
                 <div class="circle absolute top-0 left-0  h-full w-full" v-for="n in 18">
                     <div class="relative h-full w-full">
@@ -10,10 +19,6 @@
                 </div>
             </div>
         </div>
-        <p class="nanum-myeongjo text-white">“If we really met, you wouldn't like me.”</p>
-        <h1 class="m-plus-1p-medium color-tuscany">SAN JUNIPERO</h1>
-        <h2 class="m-plus-1p-regular color-tuscany">Black Mirror Series 3, Episode 4</h2>
-        <h2 class="m-plus-1p-regular color-tuscany">Directed by Owen Harris</h2>
     </main>
 </template>
 <style scoped>
