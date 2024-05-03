@@ -11,7 +11,7 @@
             </div>
         </div>
         <div id="image-container"
-            class="rounded-full absolute top-1/3 xl:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:-left-56 overflow-hidden"
+            class="rounded-full absolute top-1/3 xl:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:-left-80 overflow-hidden"
             :class="{ 'hospital-scene-active': isHospitalSceneActive, 'beach-scene-active': !isHospitalSceneActive }">
             <p class="nanum-myeongjo text-white absolute top-1/2 left-1/2 z-10 text-xl xl:text-4xl w-1/3 text-center"
                 v-if="!isHospitalSceneActive">
@@ -56,8 +56,8 @@ main {
 }
 
 #image-container {
-    height: 120vmin;
-    width: 120vmin;
+    height: 130vmin;
+    width: 130vmin;
     transition: box-shadow 1s;
 }
 
@@ -248,8 +248,8 @@ main {
 @keyframes pulse {
 
     0%,
-    25%,
-    75%,
+    /* 25%,
+    75%, */
     100% {
         opacity: 0;
     }
