@@ -58,7 +58,7 @@ main {
 #image-container {
     height: 120vmin;
     width: 120vmin;
-    box-shadow: 0 0 1rem .25rem rgba(255, 255, 255, .1);
+    transition: box-shadow 1s;
 }
 
 .animation-active {
@@ -85,9 +85,17 @@ main {
     background-image: url('/images/meet-me/vlcsnap-2024-05-01-15h22m58s753.png');
 }
 
+.beach-scene-active {
+    box-shadow: 0 0 1rem .25rem rgba(255, 255, 255, .1);
+}
+
 .hospital-scene-active::before {
     background-position: 50%;
     background-image: url('/images/meet-me/vlcsnap-2024-05-01-14h45m05s690.png');
+}
+
+.hospital-scene-active {
+    box-shadow: 0 0 1rem .25rem rgba(0, 0, 0, .1);
 }
 
 .circle {

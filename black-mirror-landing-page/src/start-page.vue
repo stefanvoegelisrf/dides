@@ -1,7 +1,7 @@
 <template>
     <main class="flex flex-col items-center h-screen bg-no-repeat bg-center bg-cover">
         <section id="header" class="w-max">
-            <h1 class="m-plus-1p-medium text-5xl xl:text-8xl p-8 color-midnight-green neon-pulsating-text">San Junipero</h1>
+            <h1 class="m-plus-1p-medium text-5xl xl:text-8xl p-8 color-midnight-green neon-pulsating-text bg-midnight-green mt-2 rounded-lg">San Junipero</h1>
         </section>
         <section id="navigation" class="w-max grid xl:grid-cols-2 xl:grid-rows-1 grid-cols-1 grid-rows-2 text-center">
             <RouterLink to="/girlfriend-in-a-coma" class="p-8 nanum-myeongjo text-xl text-white">Girlfriend in a coma</RouterLink>
@@ -18,6 +18,10 @@ main {
 
 .color-midnight-green {
     color: var(--color-midnight-green);
+}
+
+.bg-midnight-green {
+    background-color: var(--color-midnight-green);
 }
 
 .neon-flickering-text {
