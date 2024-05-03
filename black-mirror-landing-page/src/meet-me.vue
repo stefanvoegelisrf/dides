@@ -1,8 +1,8 @@
 <template>
     <main class="h-screen max-h-screen bg-dark-gunmetal overflow-hidden">
-        <div class="absolute xl:h-screen w-full xl:w-1/2 bottom-0 xl:top-0 left-0 xl:left-1/2 flex flex-col items-center justify-center gap-16">
+        <div class="absolute xl:h-screen w-full xl:w-1/2 bottom-0 xl:top-0 left-0 xl:left-1/2 flex xl:flex-col flex-col-reverse items-center justify-center gap-16">
             <h1 class="m-plus-1p-medium color-tuscany text-4xl xl:text-8xl">SAN JUNIPERO</h1>
-            <div class="flex flex-col items-center gap-8">
+            <div class="flex flex-row xl:flex-col items-center gap-8">
                 <h2 class="m-plus-1p-regular color-tuscany">Black Mirror Series 3, Episode 4</h2>
                 <h2 class="m-plus-1p-regular color-tuscany">Directed by Owen Harris</h2>
             </div>
