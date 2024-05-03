@@ -1,9 +1,9 @@
 <template>
     <main class="flex flex-col items-center h-screen bg-no-repeat bg-center bg-cover">
-        <section id="header" class="w-max">
-            <h1 class="m-plus-1p-medium text-5xl xl:text-8xl p-8 color-midnight-green neon-pulsating-text bg-midnight-green mt-2 rounded-lg">San Junipero</h1>
+        <section id="header" class="w-max neon-pulsating-box-shadow rounded-2xl mt-2">
+            <h1 class="lobster-regular text-5xl xl:text-8xl p-8 color-midnight-green neon-pulsating-text bg-midnight-green rounded-2xl border-white border-4">San Junipero</h1>
         </section>
-        <section id="navigation" class="w-max grid xl:grid-cols-2 xl:grid-rows-1 grid-cols-1 grid-rows-2 text-center">
+        <section id="navigation" class="w-max grid xl:grid-cols-2 xl:grid-rows-1 grid-cols-1 grid-rows-2 text-center justify-center items-center h-full">
             <RouterLink to="/girlfriend-in-a-coma" class="p-8 nanum-myeongjo text-xl text-white">Girlfriend in a coma</RouterLink>
             <RouterLink to="/meet-me" class="p-8 nanum-myeongjo text-xl text-white">Meet me</RouterLink>
         </section>
@@ -30,6 +30,10 @@ main {
 
 .neon-pulsating-text {
   animation: pulsate 2.5s infinite alternate;
+}
+
+.neon-pulsating-box-shadow{
+    animation: pulsate-box-shadow 2.5s infinite alternate;
 }
 
 /* Flickering animation */
@@ -79,5 +83,17 @@ main {
       0 0 70px var(--color-keppel),
       0 0 80px var(--color-keppel);
   }
+}
+
+@keyframes pulsate-box-shadow{
+    0%{
+        box-shadow: 0 0 0 0 var(--color-keppel);
+    }
+    50%{
+        box-shadow: 0 0 .5rem .5rem var(--color-keppel);
+    }
+    100%{
+        box-shadow: 0 0 0 0 var(--color-keppel);
+    }
 }
 </style>
