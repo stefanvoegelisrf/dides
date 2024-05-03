@@ -1,19 +1,28 @@
 <template>
-    <main class="h-screen max-h-screen bg-dark-gunmetal overflow-hidden">
-        <div
-            class="absolute xl:h-screen w-full xl:w-1/2 bottom-0 xl:top-0 left-0 xl:left-1/2 flex xl:flex-col flex-col-reverse items-center justify-center gap-4 xl:gap-16">
-            <h1 class="m-plus-1p-medium color-tuscany text-5xl xl:text-8xl">SAN JUNIPERO</h1>
+    <main id="container" @click="onContainerClick" class="h-screen max-h-screen overflow-hidden"
+        :class="{ 'bg-tuscany': isHospitalSceneActive, 'bg-dark-gunmetal': !isHospitalSceneActive }">
+        <div id="title"
+            class="absolute xl:h-screen w-full xl:w-1/2 bottom-0 xl:top-0 left-0 xl:left-1/2 flex xl:flex-col flex-col-reverse items-center justify-center gap-4 xl:gap-16"
+            :class="{ 'color-tuscany': !isHospitalSceneActive, 'color-dark-gunmetal': isHospitalSceneActive }">
+            <h1 class="m-plus-1p-medium text-5xl xl:text-8xl">SAN JUNIPERO</h1>
             <div class="flex flex-row xl:flex-col items-center gap-2 xl:gap-8 text-center">
-                <h2 class="m-plus-1p-regular color-tuscany">Black Mirror Series 3, Episode 4</h2>
-                <h2 class="m-plus-1p-regular color-tuscany">Directed by Owen Harris</h2>
+                <h2 class="m-plus-1p-regular">Black Mirror Series 3 Episode 4</h2>
+                <h2 class="m-plus-1p-regular">Directed by Owen Harris</h2>
             </div>
         </div>
-        <div id="beach-scene"
-            class="rounded-full absolute top-1/3 xl:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:-left-56 overflow-hidden">
-            <p class="nanum-myeongjo text-white absolute top-1/2 left-1/2 z-10 text-xl xl:text-4xl w-1/3 text-center">
-                “If we really met, you wouldn't like me.”</p>
+        <div id="image-container"
+            class="rounded-full absolute top-1/3 xl:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:-left-56 overflow-hidden"
+            :class="{ 'hospital-scene-active': isHospitalSceneActive, 'beach-scene-active': !isHospitalSceneActive }">
+            <p class="nanum-myeongjo text-white absolute top-1/2 left-1/2 z-10 text-xl xl:text-4xl w-1/3 text-center"
+                v-if="!isHospitalSceneActive">
+                “If we really met, you wouldn't like me.”
+            </p>
+            <p class="nanum-myeongjo text-white absolute top-1/3 -translate-x-1/3 -translate-y-1/2 left-1/3 z-10 text-xl xl:text-4xl w-1/3 text-center"
+                v-if="isHospitalSceneActive">
+                “Hello Stupid, it’s good to see you.”</p>
             <div class="relative w-full h-full">
-                <div class="circle absolute top-0 left-0 h-full w-full" v-for="n in 18">
+                <div class="circle absolute top-0 left-0 h-full w-full" v-for="n in 18"
+                    :class="{ 'animation-active': !isHospitalSceneActive, 'animation-inactive': isHospitalSceneActive }">
                     <div class="relative h-full w-full">
                         <span
                             class="inner-circle absolute left-1/2 -translate-x-1/2 top-0 translate-y-1/2 w-12 h-12 xl:w-24 xl:h-24 bg-dark-gunmetal rounded-full"></span>
@@ -23,28 +32,68 @@
         </div>
     </main>
 </template>
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+let isHospitalSceneActive = ref(false);
+
+const onContainerClick = () => {
+    console.log('onContainerClick')
+    isHospitalSceneActive.value = !isHospitalSceneActive.value;
+    console.log(isHospitalSceneActive.value)
+};
+</script>
 <style scoped>
 main {
     --color-dark-gunmetal: #1D2734;
     --color-tuscany: #BD98A0;
     --circle-amount: 18;
     --animation-duration: 1.25s;
+    transition: background-color 1s;
 }
 
-#beach-scene {
-    background-image: url('/images/meet-me/vlcsnap-2024-05-01-15h22m58s753.png');
-    background-size: cover;
-    background-position: 35%;
+#title {
+    transition: color 1s;
+}
+
+#image-container {
     height: 120vmin;
     width: 120vmin;
-    box-shadow: 0 0 1rem 1rem rgba(255, 255, 255, .1);
+    box-shadow: 0 0 1rem .25rem rgba(255, 255, 255, .1);
+}
+
+.animation-active {
+    animation-iteration-count: infinite;
+}
+
+.animation-inactive {
+    animation-iteration-count: 1;
+}
+
+#image-container::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.beach-scene-active::before {
+    background-position: 35%;
+    background-image: url('/images/meet-me/vlcsnap-2024-05-01-15h22m58s753.png');
+}
+
+.hospital-scene-active::before {
+    background-position: 50%;
+    background-image: url('/images/meet-me/vlcsnap-2024-05-01-14h45m05s690.png');
 }
 
 .circle {
     animation-duration: var(--animation-duration);
     animation-name: pulse;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
     opacity: 0;
 }
 
