@@ -8,7 +8,7 @@
             </div>
         </div>
         <div id="beach-scene" class="rounded-full absolute top-1/3 xl:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:-left-56 overflow-hidden">
-            <p class="nanum-myeongjo text-white absolute top-1/2 left-1/2 z-10 text-2xl xl:text-4xl w-64 text-center">
+            <p class="nanum-myeongjo text-white absolute top-1/2 left-1/2 z-10 text-xl xl:text-4xl w-1/3 text-center">
                 “If we really met, you wouldn't like me.”</p>
             <div class="relative w-full h-full">
                 <div class="circle absolute top-0 left-0 h-full w-full" v-for="n in 18">
