@@ -11,13 +11,13 @@
             </div>
         </div>
         <div id="image-container"
-            class="rounded-full absolute top-1/3 xl:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:-left-80 overflow-hidden"
+            class="rounded-full absolute top-1/3 xl:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:-left-72 overflow-hidden"
             :class="{ 'hospital-scene-active': isHospitalSceneActive, 'beach-scene-active': !isHospitalSceneActive }">
             <p class="nanum-myeongjo text-white absolute top-1/2 left-1/2 z-10 text-xl xl:text-4xl w-1/3 text-center"
                 v-if="!isHospitalSceneActive">
                 “If we really met, you wouldn't like me.”
             </p>
-            <p class="nanum-myeongjo text-white absolute top-1/3 -translate-x-1/3 -translate-y-1/2 left-1/3 z-10 text-xl xl:text-4xl w-1/3 text-center"
+            <p class="nanum-myeongjo text-white absolute top-1/3 -translate-x-1/4 -translate-y-1/2 left-1/3 z-10 text-xl xl:text-4xl w-1/3 text-center"
                 v-if="isHospitalSceneActive">
                 “Hello Stupid, it’s good to see you.”</p>
             <div class="relative w-full h-full">
