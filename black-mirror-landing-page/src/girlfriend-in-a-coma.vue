@@ -8,7 +8,7 @@
             class="absolute left-1/2 -translate-x-1/2 bottom-4 xl:bottom-6 leading-none text-5xl xl:text-8xl m-plus-1p-medium w-max">
             SAN JUNIPERO</h1>
         <h2 class="absolute text-xs xl:text-base bottom-16 xl:bottom-28 left-4 xl:left-1/3 m-plus-1p-regular">Black
-            Mirror Series 3, Episode 4</h2>
+            Mirror Series 3 Episode 4</h2>
         <h2 class="absolute text-xs xl:text-base bottom-16 xl:bottom-28 right-4 xl:right-1/3 m-plus-1p-regular">Directed
             by Owen Harris</h2>
     </main>
