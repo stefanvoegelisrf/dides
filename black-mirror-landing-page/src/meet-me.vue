@@ -82,7 +82,7 @@ main {
 
 .beach-scene-active::before {
     background-position: 35%;
-    background-image: url('/images/meet-me/vlcsnap-2024-05-01-15h22m58s753.png');
+    background-image: url('/images/meet-me/vlcsnap-2024-05-01-15h22m58s753_edit.png');
 }
 
 .beach-scene-active {
