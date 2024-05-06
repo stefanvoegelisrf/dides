@@ -1,5 +1,5 @@
 <template>
-    <main id="container" @click="onContainerClick" class="h-screen max-h-screen overflow-hidden"
+    <main id="container" @click="onContainerClick" class="h-screen max-h-screen overflow-hidden cursor-pointer"
         :class="{ 'bg-tuscany': isHospitalSceneActive, 'bg-dark-gunmetal': !isHospitalSceneActive }">
         <div id="title"
             class="absolute xl:h-screen w-full xl:w-1/2 bottom-0 xl:top-0 left-0 xl:left-1/2 flex xl:flex-col flex-col-reverse items-center justify-center gap-4 xl:gap-16"
