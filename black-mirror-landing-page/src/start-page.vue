@@ -1,7 +1,7 @@
 <template>
     <main class="flex flex-col items-center h-screen bg-no-repeat bg-center bg-cover">
-        <section id="header" class="w-max neon-pulsating-box-shadow rounded-2xl mt-2">
-            <h1 class="lobster-regular text-5xl xl:text-8xl p-8 color-midnight-green neon-pulsating-text bg-midnight-green rounded-2xl border-white border-4">San Junipero</h1>
+        <section id="header" class="w-max mt-2">
+            <h1 class="lobster-regular text-5xl xl:text-8xl p-8 color-midnight-green">San Junipero</h1>
         </section>
         <section id="navigation" class="w-max grid xl:grid-cols-2 xl:grid-rows-1 grid-cols-1 grid-rows-2 text-center justify-center items-center h-full">
             <RouterLink to="/girlfriend-in-a-coma" class="p-8 nanum-myeongjo text-xl text-white">Girlfriend in a coma</RouterLink>
@@ -22,78 +22,5 @@ main {
 
 .bg-midnight-green {
     background-color: var(--color-midnight-green);
-}
-
-.neon-flickering-text {
-  animation: flicker 1.5s infinite alternate;
-}
-
-.neon-pulsating-text {
-  animation: pulsate 2.5s infinite alternate;
-}
-
-.neon-pulsating-box-shadow{
-    animation: pulsate-box-shadow 2.5s infinite alternate;
-}
-
-/* Flickering animation */
-@keyframes flicker {
-    
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-
-      text-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px var(--color-keppel),
-      0 0 80px var(--color-keppel),
-      0 0 90px var(--color-keppel),
-      0 0 100px var(--color-keppel),
-      0 0 150px var(--color-keppel);
-  
-  }
-  
-  20%, 24%, 55% {        
-      text-shadow: none;
-  }    
-}
-
-@keyframes pulsate {
-  100% {
-    /* Larger blur radius */
-    text-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px var(--color-keppel),
-      0 0 80px var(--color-keppel),
-      0 0 90px var(--color-keppel),
-      0 0 100px var(--color-keppel),
-      0 0 150px var(--color-keppel);
-  }
-  0% {
-    /* Smaller blur radius */
-    text-shadow:
-      0 0 2px #fff,
-      0 0 4px #fff,
-      0 0 6px #fff,
-      0 0 10px var(--color-keppel),
-      0 0 45px var(--color-keppel),
-      0 0 55px var(--color-keppel),
-      0 0 70px var(--color-keppel),
-      0 0 80px var(--color-keppel);
-  }
-}
-
-@keyframes pulsate-box-shadow{
-    0%{
-        box-shadow: 0 0 0 0 var(--color-keppel);
-    }
-    50%{
-        box-shadow: 0 0 .5rem .5rem var(--color-keppel);
-    }
-    100%{
-        box-shadow: 0 0 0 0 var(--color-keppel);
-    }
 }
 </style>

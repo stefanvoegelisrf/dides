@@ -82,7 +82,7 @@ main {
 
 .beach-scene-active::before {
     background-position: 35%;
-    background-image: url('/images/meet-me/vlcsnap-2024-05-01-15h22m58s753_edit.png');
+    background-image: url('/images/meet-me/vlcsnap-2024-05-01-15h22m58s753_edit_upscaled.png');
 }
 
 .beach-scene-active {
@@ -106,7 +106,7 @@ main {
 }
 
 .inner-circle {
-    box-shadow: 0 0 .25rem .25rem rgba(255, 255, 255, .1);
+    /* box-shadow: 0 0 .25rem .25rem rgba(255, 255, 255, .1); */
 }
 
 .circle:nth-child(10) {
