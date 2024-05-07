@@ -1,29 +1,20 @@
 <template>
-    <main id="container" @click="onContainerClick" class="h-screen max-h-screen overflow-hidden cursor-pointer" :class="{
-        'bg-tuscany': isHospitalSceneActive
-        , 'bg-dark-gunmetal': !isHospitalSceneActive
-        , 'noise-tuscany-horizontal': isXlScreen && isHospitalSceneActive
-        , 'noise-dark-gunmetal-horizontal': isXlScreen && !isHospitalSceneActive
-        , 'noise-tuscany-vertical': !isXlScreen && isHospitalSceneActive
-        , 'noise-dark-gunmetal-vertical': !isXlScreen && !isHospitalSceneActive
-    }">
-        <div id="title"
-            class="absolute xl:h-screen w-full xl:w-1/2 bottom-0 xl:top-0 left-0 xl:left-1/2 flex xl:flex-col flex-col-reverse items-center justify-center gap-4 xl:gap-16"
-            :class="{ 'color-tuscany': !isHospitalSceneActive, 'color-dark-gunmetal': isHospitalSceneActive }">
-            <h1 class="m-plus-1p-medium text-5xl xl:text-8xl">SAN JUNIPERO</h1>
-            <div class="flex flex-row xl:flex-col items-center gap-2 xl:gap-8 text-center">
-                <h2 class="m-plus-1p-regular">Black Mirror Series 3 Episode 4</h2>
-                <h2 class="m-plus-1p-regular">Directed by Owen Harris</h2>
-            </div>
-        </div>
-        <div id="image-container"
-            class="rounded-full absolute top-1/3 xl:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:-left-72 overflow-hidden"
+    <main id="container" @click="onContainerClick"
+        class="h-screen max-h-screen overflow-hidden cursor-pointer grid xl:grid-cols-12 xl:grid-rows-1 grid-rows-3 grid-cols-1 items-center justify-center" :class="{
+            'bg-tuscany': isHospitalSceneActive
+            , 'bg-dark-gunmetal': !isHospitalSceneActive
+            , 'noise-tuscany-horizontal': isXlScreen && isHospitalSceneActive
+            , 'noise-dark-gunmetal-horizontal': isXlScreen && !isHospitalSceneActive
+            , 'noise-tuscany-vertical': !isXlScreen && isHospitalSceneActive
+            , 'noise-dark-gunmetal-vertical': !isXlScreen && !isHospitalSceneActive
+        }">
+        <div id="image-container" class="rounded-full overflow-hidden xl:col-span-6 row-span-2 justify-self-center"
             :class="{ 'hospital-scene-active': isHospitalSceneActive, 'beach-scene-active': !isHospitalSceneActive }">
             <p class="nanum-myeongjo text-white absolute top-1/2 left-1/2 z-10 text-xl xl:text-4xl w-1/3 text-center"
                 v-if="!isHospitalSceneActive">
                 “If we really met, you wouldn't like me.”
             </p>
-            <p class="nanum-myeongjo text-white absolute top-1/3 -translate-x-1/4 -translate-y-1/2 left-1/3 z-10 text-xl xl:text-4xl w-1/3 text-center"
+            <p class="nanum-myeongjo text-white absolute xl:top-1/3 top-16 translate-y-full xl:-translate-y-1/2 left-1/3 z-10 text-xl xl:text-4xl w-1/3 text-center"
                 v-if="isHospitalSceneActive">
                 “Hello Stupid, it’s good to see you.”</p>
             <div class="relative w-full h-full">
@@ -34,6 +25,15 @@
                             class="inner-circle absolute left-1/2 -translate-x-1/2 top-0 translate-y-1/2 w-12 h-12 xl:w-24 xl:h-24 bg-tuscany rounded-full"></span>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div id="title"
+            class="flex xl:flex-col flex-col-reverse items-center justify-center gap-4 xl:gap-16 xl:col-span-6 row-span-1 xl:h-screen w-full self-end xl:self-center"
+            :class="{ 'color-tuscany': !isHospitalSceneActive, 'color-dark-gunmetal': isHospitalSceneActive }">
+            <h1 class="m-plus-1p-medium text-5xl xl:text-8xl">SAN JUNIPERO</h1>
+            <div class="flex flex-row xl:flex-col items-center gap-2 xl:gap-8 text-center">
+                <h2 class="m-plus-1p-regular">Black Mirror Series 3 Episode 4</h2>
+                <h2 class="m-plus-1p-regular">Directed by Owen Harris</h2>
             </div>
         </div>
     </main>
@@ -77,9 +77,26 @@ main {
 }
 
 #image-container {
-    height: 130vmin;
-    width: 130vmin;
+
     transition: box-shadow 1s;
+    background-size: cover;
+}
+
+@media (max-width:1280px) {
+    #image-container {
+        height: 50rem;
+        width: 50rem;
+    }
+
+}
+
+@media (min-width:1280px) {
+    #image-container {
+        height: 80rem;
+        width: 80rem;
+        
+        transform: translateX(-10%);
+    }
 }
 
 .animation-active {
@@ -115,19 +132,7 @@ main {
         url(https://grainy-gradients.vercel.app/noise.svg);
 }
 
-
-#image-container::before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-}
-
-.beach-scene-active::before {
+.beach-scene-active {
     background-position: 35%;
     background-image: url('/images/meet-me/vlcsnap-2024-05-01-15h22m58s753_edit_upscaled.png');
 }
@@ -136,7 +141,7 @@ main {
     box-shadow: 0 0 1rem .25rem rgba(255, 255, 255, .1);
 }
 
-.hospital-scene-active::before {
+.hospital-scene-active {
     background-position: 50%;
     background-image: url('/images/meet-me/vlcsnap-2024-05-01-14h45m05s690.png');
 }
