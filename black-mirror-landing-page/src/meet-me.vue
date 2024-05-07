@@ -68,16 +68,16 @@ main {
     --color-tuscany: #BD98A0;
     --circle-amount: 18;
     --animation-duration: 2s;
-    transition: background-color 1s;
+    --transition-duration:3s;
+    transition: background-color var(--transition-duration);
 }
 
 #title {
-    transition: color 1s;
+    transition: color var(--transition-duration);
 }
 
 #image-container {
-
-    transition: box-shadow 1s;
+    transition: box-shadow var(--transition-duration);
     background-size: cover;
 }
 
