@@ -53,7 +53,6 @@ const onResize = () => {
     else {
         isXlScreen.value = false;
     }
-    console.log(isXlScreen.value);
 };
 onMounted(() => {
     onResize();
@@ -84,8 +83,8 @@ main {
 
 @media (max-width:1280px) {
     #image-container {
-        height: 50rem;
-        width: 50rem;
+        height: 40rem;
+        width: 40rem;
     }
 
 }
@@ -134,7 +133,7 @@ main {
 
 .beach-scene-active {
     background-position: 35%;
-    background-image: url('/images/meet-me/vlcsnap-2024-05-01-15h22m58s753_edit_upscaled.png');
+    background-image: url('/images/meet-me/vlcsnap-2024-05-01-15h22m58s753_edit_upscaled_cropped.jpg');
 }
 
 .beach-scene-active {
@@ -143,7 +142,7 @@ main {
 
 .hospital-scene-active {
     background-position: 50%;
-    background-image: url('/images/meet-me/vlcsnap-2024-05-01-14h45m05s690.png');
+    background-image: url('/images/meet-me/vlcsnap-2024-05-01-14h45m05s690_cropped.jpg');
 }
 
 .hospital-scene-active {
