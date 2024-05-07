@@ -1,6 +1,12 @@
 <template>
-    <main id="container" @click="onContainerClick" class="h-screen max-h-screen overflow-hidden cursor-pointer"
-        :class="{ 'bg-tuscany': isHospitalSceneActive, 'bg-dark-gunmetal': !isHospitalSceneActive }">
+    <main id="container" @click="onContainerClick" class="h-screen max-h-screen overflow-hidden cursor-pointer" :class="{
+        'bg-tuscany': isHospitalSceneActive
+        , 'bg-dark-gunmetal': !isHospitalSceneActive
+        , 'noise-tuscany-horizontal': isXlScreen && isHospitalSceneActive
+        , 'noise-dark-gunmetal-horizontal': isXlScreen && !isHospitalSceneActive
+        , 'noise-tuscany-vertical': !isXlScreen && isHospitalSceneActive
+        , 'noise-dark-gunmetal-vertical': !isXlScreen && !isHospitalSceneActive
+    }">
         <div id="title"
             class="absolute xl:h-screen w-full xl:w-1/2 bottom-0 xl:top-0 left-0 xl:left-1/2 flex xl:flex-col flex-col-reverse items-center justify-center gap-4 xl:gap-16"
             :class="{ 'color-tuscany': !isHospitalSceneActive, 'color-dark-gunmetal': isHospitalSceneActive }">
@@ -25,7 +31,7 @@
                     :class="{ 'animation-active': !isHospitalSceneActive, 'animation-inactive': isHospitalSceneActive }">
                     <div class="relative h-full w-full">
                         <span
-                            class="inner-circle absolute left-1/2 -translate-x-1/2 top-0 translate-y-1/2 w-12 h-12 xl:w-24 xl:h-24 bg-dark-gunmetal rounded-full"></span>
+                            class="inner-circle absolute left-1/2 -translate-x-1/2 top-0 translate-y-1/2 w-12 h-12 xl:w-24 xl:h-24 bg-tuscany rounded-full"></span>
                     </div>
                 </div>
             </div>
@@ -33,21 +39,36 @@
     </main>
 </template>
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 let isHospitalSceneActive = ref(false);
-
+let isXlScreen = ref(false);
 const onContainerClick = () => {
-    console.log('onContainerClick')
     isHospitalSceneActive.value = !isHospitalSceneActive.value;
-    console.log(isHospitalSceneActive.value)
 };
+
+const onResize = () => {
+    if (window.innerWidth > 1280) {
+        isXlScreen.value = true;
+    }
+    else {
+        isXlScreen.value = false;
+    }
+    console.log(isXlScreen.value);
+};
+onMounted(() => {
+    onResize();
+    window.addEventListener("resize", onResize);
+});
+onUnmounted(() => {
+    window.removeEventListener("resize", onResize);
+});
 </script>
 <style scoped>
 main {
     --color-dark-gunmetal: #1D2734;
     --color-tuscany: #BD98A0;
     --circle-amount: 18;
-    --animation-duration: 1.25s;
+    --animation-duration: 2s;
     transition: background-color 1s;
 }
 
@@ -68,6 +89,32 @@ main {
 .animation-inactive {
     animation-iteration-count: 1;
 }
+
+.noise-dark-gunmetal-horizontal {
+    background:
+        linear-gradient(to right, var(--color-dark-gunmetal) 0%, transparent 65%),
+        url(https://grainy-gradients.vercel.app/noise.svg);
+}
+
+.noise-tuscany-horizontal {
+    background:
+        linear-gradient(to right, var(--color-tuscany) 0%, transparent 65%),
+        url(https://grainy-gradients.vercel.app/noise.svg);
+}
+
+
+.noise-dark-gunmetal-vertical {
+    background:
+        linear-gradient(to top, var(--color-dark-gunmetal) 0%, transparent 65%),
+        url(https://grainy-gradients.vercel.app/noise.svg);
+}
+
+.noise-tuscany-vertical {
+    background:
+        linear-gradient(to top, var(--color-tuscany) 0%, transparent 65%),
+        url(https://grainy-gradients.vercel.app/noise.svg);
+}
+
 
 #image-container::before {
     content: ' ';
@@ -248,8 +295,8 @@ main {
 @keyframes pulse {
 
     0%,
-    /* 25%,
-    75%, */
+    25%,
+    75%,
     100% {
         opacity: 0;
     }
