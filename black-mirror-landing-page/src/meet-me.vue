@@ -8,13 +8,13 @@
             , 'noise-tuscany-vertical': !isXlScreen && isHospitalSceneActive
             , 'noise-dark-gunmetal-vertical': !isXlScreen && !isHospitalSceneActive
         }">
-        <div id="image-container" class="rounded-full overflow-hidden xl:col-span-6 row-span-2 justify-self-center"
+        <div id="image-container" class="rounded-full overflow-hidden xl:col-span-6 row-span-2 justify-self-center relative"
             :class="{ 'hospital-scene-active': isHospitalSceneActive, 'beach-scene-active': !isHospitalSceneActive }">
-            <p class="nanum-myeongjo text-white absolute top-1/2 left-1/2 z-10 text-xl xl:text-4xl w-1/3 text-center"
+            <p class="nanum-myeongjo text-white z-10 text-xl xl:text-4xl w-1/3 text-center meet-me absolute"
                 v-if="!isHospitalSceneActive">
                 “If we really met, you wouldn't like me.”
             </p>
-            <p class="nanum-myeongjo text-white absolute mt-36 ml-44 xl:mt-80 xl:ml-96 z-10 text-xl xl:text-4xl w-36 xl:w-64 text-center"
+            <p class="nanum-myeongjo text-white z-10 text-xl xl:text-4xl w-36 xl:w-64 text-center hello-stupid absolute"
                 v-if="isHospitalSceneActive">
                 “Hello Stupid, it’s good to see you.”</p>
             <div class="relative w-full h-full">
@@ -81,10 +81,20 @@ main {
     background-size: cover;
 }
 
+.hello-stupid{
+    margin-top: 23%;
+    margin-left: 33%;
+}
+
+.meet-me{
+    margin-top: 55%;
+    margin-left: 50%;
+}
+
 @media (max-width:1280px) {
     #image-container {
-        height: 36rem;
-        width: 36rem;
+        height: 32rem;
+        width: 32rem;
     }
 
 }
