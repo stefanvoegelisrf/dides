@@ -30,7 +30,7 @@
             </div>
         </div>
         <div id="title"
-            class="flex xl:flex-col flex-col-reverse items-center justify-center gap-4 xl:gap-16 xl:col-span-6 row-span-1 xl:h-screen w-full self-end xl:self-center"
+            class="flex flex-col-reverse items-center justify-center gap-4 xl:gap-16 xl:col-span-6 row-span-1 xl:h-screen w-full self-end xl:self-center"
             :class="{ 'color-tuscany': !isHospitalSceneActive, 'color-dark-gunmetal': isHospitalSceneActive }">
             <h1 class="m-plus-1p-medium text-5xl xl:text-8xl">SAN JUNIPERO</h1>
             <div class="flex flex-row items-center gap-2 xl:gap-8 text-center m-plus-1p-regular xl:text-xl justify-around w-full">
