@@ -1,6 +1,7 @@
 <template>
     <main id="container" @click="onContainerClick"
-        class="h-screen max-h-screen overflow-hidden cursor-pointer grid xl:grid-cols-12 xl:grid-rows-1 grid-rows-3 grid-cols-1 items-center justify-center" :class="{
+        class="h-screen max-h-screen overflow-hidden cursor-pointer grid xl:grid-cols-12 xl:grid-rows-1 grid-rows-3 grid-cols-1 items-center justify-center"
+        :class="{
             'bg-tuscany': isHospitalSceneActive
             , 'bg-dark-gunmetal': !isHospitalSceneActive
             , 'noise-tuscany-horizontal': isXlScreen && isHospitalSceneActive
@@ -8,7 +9,8 @@
             , 'noise-tuscany-vertical': !isXlScreen && isHospitalSceneActive
             , 'noise-dark-gunmetal-vertical': !isXlScreen && !isHospitalSceneActive
         }">
-        <div id="image-container" class="rounded-full overflow-hidden xl:col-span-6 row-span-2 justify-self-center relative"
+        <div id="image-container"
+            class="rounded-full overflow-hidden xl:col-span-6 row-span-2 justify-self-center relative"
             :class="{ 'hospital-scene-active': isHospitalSceneActive, 'beach-scene-active': !isHospitalSceneActive }">
             <p class="nanum-myeongjo text-white z-10 text-xl xl:text-4xl w-1/3 text-center meet-me absolute"
                 v-if="!isHospitalSceneActive">
@@ -31,9 +33,15 @@
             class="flex xl:flex-col flex-col-reverse items-center justify-center gap-4 xl:gap-16 xl:col-span-6 row-span-1 xl:h-screen w-full self-end xl:self-center"
             :class="{ 'color-tuscany': !isHospitalSceneActive, 'color-dark-gunmetal': isHospitalSceneActive }">
             <h1 class="m-plus-1p-medium text-5xl xl:text-8xl">SAN JUNIPERO</h1>
-            <div class="flex flex-row xl:flex-col items-center gap-2 xl:gap-8 text-center">
-                <h2 class="m-plus-1p-regular">Black Mirror Series 3 Episode 4</h2>
-                <h2 class="m-plus-1p-regular">Directed by Owen Harris</h2>
+            <div class="flex flex-row items-center gap-2 xl:gap-8 text-center m-plus-1p-regular xl:text-xl justify-around w-full">
+                <div>
+                    <h2>Black Mirror</h2>
+                    <h2>Series 3 Episode 4</h2>
+                </div>
+                <div>
+                    <h2>Directed by</h2>
+                    <h2>Owen Harris</h2>
+                </div>
             </div>
         </div>
     </main>
@@ -68,7 +76,7 @@ main {
     --color-tuscany: #BD98A0;
     --circle-amount: 18;
     --animation-duration: 2s;
-    --transition-duration:3s;
+    --transition-duration: 3s;
     transition: background-color var(--transition-duration);
 }
 
@@ -81,12 +89,12 @@ main {
     background-size: cover;
 }
 
-.hello-stupid{
+.hello-stupid {
     margin-top: 23%;
     margin-left: 33%;
 }
 
-.meet-me{
+.meet-me {
     margin-top: 55%;
     margin-left: 50%;
 }
@@ -103,7 +111,7 @@ main {
     #image-container {
         height: 80rem;
         width: 80rem;
-        
+
         transform: translateX(-10%);
     }
 }
