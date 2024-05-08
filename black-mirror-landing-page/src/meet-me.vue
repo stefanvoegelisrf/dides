@@ -35,7 +35,7 @@
                     “Hello Stupid, it’s good to see you.”</p>
             </div>
 
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4 mb-4">
                 <div
                     class="flex flex-row items-center gap-2 xl:gap-8 text-center m-plus-1p-regular xl:text-xl justify-around w-full">
                     <div>
