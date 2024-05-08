@@ -12,13 +12,8 @@
         <div id="image-container"
             class="rounded-full overflow-hidden xl:col-span-6 row-span-2 justify-self-center relative"
             :class="{ 'hospital-scene-active': isHospitalSceneActive, 'beach-scene-active': !isHospitalSceneActive }">
-            <p class="nanum-myeongjo text-white z-10 text-xl xl:text-4xl w-1/3 text-center meet-me absolute"
-                v-if="!isHospitalSceneActive">
-                “If we really met, you wouldn't like me.”
-            </p>
-            <p class="nanum-myeongjo text-white z-10 text-xl xl:text-4xl w-36 xl:w-64 text-center hello-stupid absolute"
-                v-if="isHospitalSceneActive">
-                “Hello Stupid, it’s good to see you.”</p>
+
+
             <div class="relative w-full h-full">
                 <div class="circle absolute top-0 left-0 h-full w-full" v-for="n in 18"
                     :class="{ 'animation-active': !isHospitalSceneActive, 'animation-inactive': isHospitalSceneActive }">
@@ -30,18 +25,29 @@
             </div>
         </div>
         <div id="title"
-            class="flex flex-col-reverse items-center justify-center gap-4 xl:gap-16 xl:col-span-6 row-span-1 xl:h-screen w-full self-end xl:self-center"
+            class="flex flex-col items-center justify-between xl:col-span-6 row-span-1 xl:h-screen w-full h-full"
             :class="{ 'color-tuscany': !isHospitalSceneActive, 'color-dark-gunmetal': isHospitalSceneActive }">
-            <h1 class="m-plus-1p-medium text-5xl xl:text-8xl">SAN JUNIPERO</h1>
-            <div class="flex flex-row items-center gap-2 xl:gap-8 text-center m-plus-1p-regular xl:text-xl justify-around w-full">
-                <div>
-                    <h2>Black Mirror</h2>
-                    <h2>Series 3 Episode 4</h2>
+            <div class="h-1/2 flex items-center xl:items-end">
+                <p class="nanum-myeongjo text-white z-10 text-xl xl:text-4xl" v-if="!isHospitalSceneActive">
+                    “If we really met, you wouldn't like me.”
+                </p>
+                <p class="nanum-myeongjo text-white z-10 text-xl xl:text-4xl" v-if="isHospitalSceneActive">
+                    “Hello Stupid, it’s good to see you.”</p>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <div
+                    class="flex flex-row items-center gap-2 xl:gap-8 text-center m-plus-1p-regular xl:text-xl justify-around w-full">
+                    <div>
+                        <h2>Black Mirror</h2>
+                        <h2>Series 3 Episode 4</h2>
+                    </div>
+                    <div>
+                        <h2>Directed by</h2>
+                        <h2>Owen Harris</h2>
+                    </div>
                 </div>
-                <div>
-                    <h2>Directed by</h2>
-                    <h2>Owen Harris</h2>
-                </div>
+                <h1 class="m-plus-1p-medium text-5xl xl:text-8xl">SAN JUNIPERO</h1>
             </div>
         </div>
     </main>
@@ -95,8 +101,9 @@ main {
 }
 
 .meet-me {
-    margin-top: 55%;
-    margin-left: 50%;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
 }
 
 @media (max-width:1280px) {
