@@ -28,10 +28,10 @@
             class="flex flex-col items-center justify-between xl:col-span-6 row-span-1 xl:h-screen w-full h-full"
             :class="{ 'color-tuscany': !isHospitalSceneActive, 'color-dark-gunmetal': isHospitalSceneActive }">
             <div class="h-1/2 flex items-center xl:items-end">
-                <p class="nanum-myeongjo text-white z-10 text-xl xl:text-4xl" v-if="!isHospitalSceneActive">
+                <p class="nanum-myeongjo text-white z-10 text-xl xl:text-4xl color-tuscany" v-if="!isHospitalSceneActive">
                     “If we really met, you wouldn't like me.”
                 </p>
-                <p class="nanum-myeongjo text-white z-10 text-xl xl:text-4xl" v-if="isHospitalSceneActive">
+                <p class="nanum-myeongjo text-white z-10 text-xl xl:text-4xl color-dark-gunmetal" v-if="isHospitalSceneActive">
                     “Hello Stupid, it’s good to see you.”</p>
             </div>
 
